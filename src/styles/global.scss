@@ -1,0 +1,89 @@
+@import "./variables.scss";
+@import "./responsive.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%; // This ensures the html and body tags take up the full height of the viewport
+  width: 100%; // Ensures they take up the full width as well
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column; // This helps in structuring your main content to stretch properly
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  font-family: "Inter", sans-serif;
+  background-color: $main-bg;
+  color: $main-color;
+  flex: 1; // This allows the .main container to expand and fill the available space
+  display: flex; // Assuming .main is a flex container
+  flex-direction: column; // Choose based on your layout needs
+  font-family: "Inter", sans-serif;
+   color: $main-color;
+  min-height: 100vh; // This ensures that .main stretches to at least the full height of the viewport
+  &.dark-mode {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+  }
+
+  &.light-mode {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+  }
+}
+
+.container {
+  display: flex;
+  &.dark-mode {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+  }
+
+  &.light-mode {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+  }
+}
+
+.menuContainer {
+  width: 250px;
+  padding: 5px 20px;
+  border-right: 2px solid $soft-bg;
+
+  @include lg{
+    width: max-content;
+  }
+  &.dark-mode {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+  }
+
+  &.light-mode {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+  }
+}
+
+.contentContainer {
+  padding: 5px 20px;
+  width: 100%;
+  &.dark-mode {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+  }
+
+  &.light-mode {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+  }
+}

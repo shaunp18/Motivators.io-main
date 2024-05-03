@@ -1,0 +1,25 @@
+.logout-button {
+    background-color: #8f2d29;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+    background-color: #8d3429;
+}
+
+.login-button:active {
+    transform: scale(0.98);
+}
+
+.top-right {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}

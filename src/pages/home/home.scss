@@ -1,0 +1,156 @@
+@import "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
+.home {
+  display: grid;
+  gap: 20px; /* Space between grid items */
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 columns dynamically */
+
+  @include xl{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include lg{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include md {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @include sm {
+    grid-auto-rows: minmax(120px, auto);
+  }
+
+  .box  {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    height: 600px;
+    border: 2px solid $soft-bg;
+    grid-column: span 1; /* Each box takes 1 column space */
+    grid-row: span 1; /* And 1 row space, automatically sized */
+    
+  }
+  .box6 {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid $soft-bg;
+    grid-column: span 1; /* Allows the box to take 1 column space */
+    grid-row: span 1; /* And 1 row space, automatically sized */
+    position: relative; /* Add relative positioning */
+  }
+  
+  .box1{
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid $soft-bg;
+    grid-column: span 2; /* Each box takes 1 column space */
+    grid-row: span 1; /* And 1 row space, automatically sized */
+    grid-row: 3; /* Starts at row 3 and takes up 1 row space */
+  }
+  .box2 {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid $soft-bg;
+    grid-column: span 2; /* Allows the box to take 2 columns */
+    grid-row: 2; /* Starts at row 2 and takes up 1 row space */
+    .accordion-button {
+      background-color: transparent; /* Remove button-like background */
+      color: white; /* Use a variable for color or choose a color */
+      font-weight: bold; /* Make the title text bolder */
+      border: none; /* Remove border to not look like a button */
+      
+      &:not(.collapsed) {
+        background-color: transparent; /* Keep background transparent even when expanded */
+        color: white; /* Change color when expanded, if desired */
+      }
+    }
+  }
+
+  .box3 {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid $soft-bg;
+    grid-column: 3; /* Allows the box to take 2 columns */
+    grid-column: span 1; /* Allows the box to take 2 columns */
+    grid-row: 2; /* Starts at row 2 and takes up 1 row space */
+  }
+   
+  .box4 {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid $soft-bg;
+    grid-column: 1; /* Allows the box to take 2 columns */
+    grid-column: span 1; /* Allows the box to take 2 columns */
+    grid-row: 1; /* Starts at row 2 and takes up 1 row space */
+    overflow: auto; 
+  }
+
+  .box5 {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid $soft-bg;
+    grid-column: 2; /* Allows the box to take 2 columns */
+    grid-column: span 1; /* Allows the box to take 2 columns */
+    grid-row: 1; /* Starts at row 2 and takes up 1 row space */
+    overflow: auto; 
+  }
+
+  .submit-button {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+
+  .draggable-icon {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 40px;
+    border: 2px solid $soft-bg;
+    cursor: grab;
+  }
+
+  .draggable-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .draggable-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .draggable-box {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc; /* Adjust border styles as needed */
+    border-radius: 5px;
+  }
+
+  .today {
+    background-color: #ffecb3; /* Light yellow for today */
+  }
+
+  .meeting-day {
+    border: 2px solid #64b5f6; /* Blue border for meeting days (Mondays) */
+  }
+}
+

@@ -1,0 +1,33 @@
+@import "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
+.home {
+  display: grid;
+  gap: 20px; // Space between grid items
+  grid-template-columns: repeat(3, 1fr); // Creates 3 columns
+  grid-template-rows: repeat(2, auto); // Creates 2 rows, auto-sized based on content
+
+  // Responsive adjustments as needed
+  @include xl{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include lg{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include md {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @include sm {
+    grid-auto-rows: minmax(120px, auto);
+  }
+
+  .box {
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid $soft-bg;
+    aspect-ratio: 1 / 1; // This ensures the box is always square
+    display: flex; // Added for internal content alignment
+    justify-content: center; // Center content horizontally
+    align-items: center; // Center content vertically
+  }
+
+}
